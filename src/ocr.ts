@@ -9,6 +9,7 @@ export async function transcribeTextFromImage(base64Image: string): Promise<stri
     // return base64Image;
     const worker = await createWorker();
     const ret = await worker.recognize(base64Image);
+    await require('fs').writeFileSync('transcription/out.txt', ret.data.text, 'utf8');
     await worker.terminate();
     console.log(ret.data.text);
     return ret.data.text;

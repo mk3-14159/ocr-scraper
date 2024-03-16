@@ -15,6 +15,7 @@ export async function takeScreenshot(webpage: string): Promise<string> {
     .setChromeOptions(new chrome.Options())
     .build();
 
+    // rewrite path handling
     const imgpath = 'screenshots/out.png';
 
     try {
