@@ -3,6 +3,7 @@ import * as chrome from 'selenium-webdriver/chrome';
 
 // output: *.png file in src folder
 // TODO: take screenshot of specific component containing price and sale qty
+const path: string = 'screenshots/out.png';
 
 /**
  * Take a screenshot of a webpage and save it as a .png file in the src folder
@@ -15,19 +16,14 @@ export async function takeScreenshot(webpage: string): Promise<string> {
     .setChromeOptions(new chrome.Options())
     .build();
 
-    // rewrite path handling
-    const imgpath = 'screenshots/out.png';
-
     try {
         await driver.get(webpage);
         await driver.wait(webdriver.until.titleIs('WebDriver'), 1000);
         await driver.takeScreenshot().then((data) => {
-            require('fs').writeFileSync(imgpath, data, 'base64');
+            require('fs').writeFileSync(path, data, 'base64');
         });
     } finally {
         await driver.quit();
-        return imgpath;
+        return path;
     }
-
-    // return imgpath;
 }
