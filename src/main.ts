@@ -2,7 +2,7 @@ import * as webdriver from './webdriver';
 import * as ocr from './ocr';
 
 /*
-* Main function to run the program
+* Entrypoint 
 */
 async function main() {
     const target: string = 'https://mkchong.com';
