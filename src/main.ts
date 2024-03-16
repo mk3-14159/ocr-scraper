@@ -6,7 +6,7 @@ import { text } from 'stream/consumers';
 * Main function to run the program
 */
 async function main() {
-    const target: string = 'https://www.linkedin.com/';
+    const target: string = 'https://www.erican.org';
     // create the screenshot of the webpage and save it as a .png file
     let webpage_path = await webdriver.takeScreenshot(target);
     console.log('saving to', webpage_path);
