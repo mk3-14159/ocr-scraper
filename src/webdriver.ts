@@ -20,6 +20,7 @@ export async function takeScreenshot(webpage: string): Promise<string> {
 
     try {
         await driver.get(webpage);
+        await driver.wait(webdriver.until.titleIs('WebDriver'), 1000);
         await driver.takeScreenshot().then((data) => {
             require('fs').writeFileSync(imgpath, data, 'base64');
         });
