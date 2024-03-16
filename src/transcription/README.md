@@ -2,5 +2,7 @@
 
 Transcription of the targets stored here
 ```
-out.txt
+.
+├── README.md
+└── out.txt
 ```

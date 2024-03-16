@@ -2,5 +2,7 @@
 
 Screenshots of the target are stored here
 ```
-out.png
+.
+├── README.md
+└── out.png
 ```
