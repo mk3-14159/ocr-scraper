@@ -1,4 +1,5 @@
 import { createWorker } from 'tesseract.js';
+import * as fs from 'fs';
 
 const path: string = 'transcription/out.txt';
 /**
@@ -10,10 +11,10 @@ export async function transcribeTextFromImage(base64Image: string): Promise<stri
     // return base64Image;
     const worker = await createWorker();
     const ret = await worker.recognize(base64Image);
-    await require('fs').writeFileSync(path, ret.data.text, 'utf8');
+    await fs.writeFileSync(path, ret.data.text, 'utf8');
     await worker.terminate();
     console.log(ret.data.text);
     return ret.data.text;
 }
 
-transcribeTextFromImage('screenshots/out.png');
+// transcribeTextFromImage('screenshots/out.png');

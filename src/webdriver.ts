@@ -1,5 +1,6 @@
 import *  as webdriver from 'selenium-webdriver';
 import * as chrome from 'selenium-webdriver/chrome';
+import * as fs from 'fs';
 
 // output: *.png file in src folder
 // TODO: take screenshot of specific component containing price and sale qty
@@ -14,7 +15,7 @@ const screenshot_path: string = 'screenshots/out.png';
  */
 export async function takeScreenshot(webpage: string): Promise<string> {
     // const screenshot_path: string = 'screenshots/out.png';
-    let driver = new webdriver.Builder()
+    const driver = new webdriver.Builder()
     .forBrowser('chrome')
     .setChromeOptions(new chrome.Options())
     .build();
@@ -28,7 +29,7 @@ export async function takeScreenshot(webpage: string): Promise<string> {
             return readyState === 'complete';
           }, 10000); // waits up to 10 seconds
         await driver.takeScreenshot().then((data) => {
-            require('fs').writeFileSync(screenshot_path, data, 'base64');
+            fs.writeFileSync(screenshot_path, data, 'base64');
         });
     } finally {
         await driver.quit();
