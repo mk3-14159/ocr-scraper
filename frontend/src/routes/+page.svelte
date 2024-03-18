@@ -1,2 +1,6 @@
+<script>
+
+</script>
+
 <h1>Selenium OCR scraper</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p>I need to test the reativity of this project</p>
