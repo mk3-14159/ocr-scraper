@@ -17,4 +17,4 @@ export async function transcribeTextFromImage(base64Image: string): Promise<stri
     return ret.data.text;
 }
 
-// transcribeTextFromImage('screenshots/out.png');
+transcribeTextFromImage('screenshots/out.png');

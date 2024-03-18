@@ -8,7 +8,7 @@ import * as ocr from './ocr';
 * 3. Create GUI for the script
 */
 async function main() {
-    const target: string = ''; // enter the target link here 
+    const target: string = 'https://shanehastings.eu'; // enter the target link here 
     // create the screenshot of the webpage and save it as a .png file
     const webpage_path = await webdriver.takeScreenshot(target);
     console.log('saving to', webpage_path);
