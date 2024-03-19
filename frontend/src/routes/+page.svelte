@@ -1,6 +1,9 @@
-<script>
-
+<script lang="ts">
+    import { main } from '../script/main'; // It might not be wise to run this as a server side function 
+    let input: string = '';
 </script>
 
 <h1>Selenium OCR scraper</h1>
-<p>I need to test the reativity of this project</p>
+
+<input type="text" bind:value={input} placeholder="Enter Link"> 
+<button on:click={main}>Submit</button>
